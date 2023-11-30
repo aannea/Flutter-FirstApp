@@ -5,21 +5,59 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App Aan',
+      title: 'Aan Aryo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: BiggerText(
-            text : "Hello Aan!",
+      home: const FirstScreen(),
+      // home: const Scaffold(
+      //   body: Center(
+      //     child: BiggerText(
+      //       text : "Hello Aan!",
+      //     ),
+      //   ),
+      // ),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: const Text('First Screen'),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () {},
           ),
+        ],
+        leading: IconButton(
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.white,
+          ),
+          onPressed: () {},
         ),
+      ),
+      body: const Center(
+        child: Text('Hello world!'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {},
       ),
     );
   }
